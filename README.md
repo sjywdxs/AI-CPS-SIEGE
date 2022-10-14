@@ -1,1 +1,14 @@
-# AI-CPS-SIEGE
+<h1>SIEGE: A Semantics-Guided Safety Enhancement Framework for AI-enabled Cyber-Physical Systems</h1>
+
+<div style="margin:50px; text-align: justify;">
+Cyber-Physical Systems (CPSs) have been widely deployed in various industry domains to accomplish complex and safety-critical tasks, such as automotive vehicles, robotics manufacturing, and medical equipment. As Artificial Intelligence (AI) has demonstrated its promising abilities in decision-making, prediction, and optimization, a growing number of CPSs adopt AI components in the loop to extend their functionality and reliability. 
+However, these modern AI-enabled CPSs have to tackle pivotal problems that the AI-enabled control systems must compensate the balance across multiple operation requirements and avoid any possible defections in advance to safeguard human lives and properties. One of the solutions to enhance the flexibility and robustness of a control system is assembling a group of sub-controllers with certain strategies to achieve better performance. This approach raises the question of effectively integrating different controllers to fulfill multiple objectives simultaneously under CPS environments. Most existing works on the ensemble of DRL controllers focus on synergizing approximation functions during the training stage. Nevertheless, these approaches do not consider the system specifications in real-time, and the final collective output falls short of being aware of erroneous behavior beforehand.
+Moreover, they are not able to handle the huge state space in CPSs, the black-box nature of DRL agents, and the concurrent critical operating requirements, 
+A new safety-aware, specification-oriented control system is of urgent need. 
+
+We propose SIEGE, a semantics-guided ensemble control framework for AI-CPS, which aims to construct an efficient, robust, and reliable control system for multi-tasks AI-CPSs. We utilize a semantic-based abstraction to decompose the large state space, capture the ongoing system status and predict future conditions in terms of the satisfaction of specifications.  We propose a series of new semantics-aware ensemble strategies and an end-to-end DRL hierarchical ensemble method to improve the flexibility and reliability of the control systems. Our large-scale, comprehensive evaluations over five typical CPS benchmarks show that 1) the semantics abstraction can efficiently narrow the large state space and predict the semantics of incoming states, 2) our semantics-guided methods significantly outperform state-of-the-art individual controllers and traditional ensemble methods, and 3) the DRL hierarchical ensemble approach shows promising capabilities to deliver a more robust, efficient, and safety-assured control system.  
+</div>
+
+<br>
+
+This repository contains code for training and evaluating SIEGE. 
