@@ -1,5 +1,3 @@
-<h1>SIEGE: A Semantics-Guided Safety Enhancement Framework for AI-enabled Cyber-Physical Systems</h1>
-
 # AI-CPS-SIEGE
 
 Artifact evaluation for TSE submission "WSIEGE: A Semantics-Guided Safety Enhancement Framework for AI-enabled Cyber-Physical Systems" by Jiayang Song, Xuan Xie and Lei Ma.
@@ -7,7 +5,7 @@ Artifact evaluation for TSE submission "WSIEGE: A Semantics-Guided Safety Enhanc
 ## System requirement
 
 - Operating system: Linux / MacOS / Windows;
-- Matlab (Simulink/Stateflow) version: >= 2020a; (Matlab license needed)
+- Matlab (Simulink/Stateflow) version: >= 2021b; (Matlab license needed)
 - MATLAB toolboxes dependency
   1. [Simulink](https://www.mathworks.com/products/simulink.html)
   2. [Stateflow](https://www.mathworks.com/products/stateflow.html)
@@ -18,7 +16,7 @@ Artifact evaluation for TSE submission "WSIEGE: A Semantics-Guided Safety Enhanc
   
 ## Code Structure
 
-- The directory `AI-CPS-Benchmark/` contains a `benchmarks/` sub-directory and a `tools/`. The former stores the 9 CPS models introduced in Benchmarks, and the latter involves two falsification tools, namely [Breach](https://github.com/decyphir/breach) and [S-TaLiRo](https://sites.google.com/a/asu.edu/s-taliro/s-taliro), used for RQ2: Falsification.
+- The directory `AI-CPS-SIEGE/` contains a `benchmarks/` sub-directory and a `tools/`. The former stores the 9 CPS models introduced in Benchmarks, and the latter involves two falsification tools, namely [Breach](https://github.com/decyphir/breach) and [S-TaLiRo](https://sites.google.com/a/asu.edu/s-taliro/s-taliro), used for RQ2: Falsification.
 - The directory `benchmarks/` has 9 sub-directories, each storing one CPS model introduced in [Benchmarks](https://sites.google.com/view/ai-cps-benchmark/benchmarks). Each model directory has a similar structure, and we take the directory `ACC/` as an example of illustration.
 - `ACC/` involves the following sub-directories:
 - `traditional/` stores the original ACC Simulink model with a traditional controller. 
