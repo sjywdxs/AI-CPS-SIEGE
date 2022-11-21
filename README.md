@@ -1,11 +1,11 @@
 # AI-CPS-SIEGE
 
-Artifact evaluation for TSE submission "WSIEGE: A Semantics-Guided Safety Enhancement Framework for AI-enabled Cyber-Physical Systems" by Jiayang Song, Xuan Xie and Lei Ma.
+Artifact evaluation for TSE submission "SIEGE: A Semantics-Guided Safety Enhancement Framework for AI-enabled Cyber-Physical Systems" by Jiayang Song, Xuan Xie and Lei Ma.
 
 ## System requirement
 
 - Operating system: Linux / MacOS / Windows;
-- Matlab (Simulink/Stateflow) version: >= 2021b; (Matlab license needed)
+- Matlab (Simulink/Stateflow) version: >= 2022a; (Matlab license needed)
 - MATLAB toolboxes dependency
   1. [Simulink](https://www.mathworks.com/products/simulink.html)
   2. [Stateflow](https://www.mathworks.com/products/stateflow.html)
@@ -16,21 +16,27 @@ Artifact evaluation for TSE submission "WSIEGE: A Semantics-Guided Safety Enhanc
   
 ## Code Structure
 
-- The directory `AI-CPS-SIEGE/` contains a `benchmarks/` sub-directory and a `tools/`. The former stores the 9 CPS models introduced in Benchmarks, and the latter involves two falsification tools, namely [Breach](https://github.com/decyphir/breach) and [S-TaLiRo](https://sites.google.com/a/asu.edu/s-taliro/s-taliro), used for RQ2: Falsification.
-- The directory `benchmarks/` has 9 sub-directories, each storing one CPS model introduced in [Benchmarks](https://sites.google.com/view/ai-cps-benchmark/benchmarks). Each model directory has a similar structure, and we take the directory `ACC/` as an example of illustration.
-- `ACC/` involves the following sub-directories:
-- `traditional/` stores the original ACC Simulink model with a traditional controller. 
-- `DRL/` has three sub-directories: `train/`, `model/`, `agent/`. The folder `train/` stores the scripts for training DRL controllers,  `model/` stores the Simulink models with trained DRL controllers,  and `agent/` stores the trained agents (DRL controllers) based on different DRL algorithms.
-- `RQ1/` stores the scripts for replicating the results of RQ1, where we compare the performances between AI-enabled CPS and traditional CPS;
-- `RQ2/`  stores the scripts for replicating the results of RQ2, where we evaluate the effectiveness of different falsification approaches on AI-enabled CPS;
-- `RQ3/` stores the scripts for replicating the results of RQ3, where we construct CPS with hybrid controllers and evaluate their performances using the methods in RQ1 and RQ2.
+The directory `AI-CPS-SIEGE/` contains 5 sub-directory `ACC/`, `AFC/`, `APV/`, `BBC/`, and `LKA/`. Each of them stores the indicated AI-CPS introduced in Experimental Systems, and we take the directory `LKA/` as an example.
 
-- The folder `tools/` includes two widely-used falsification tools, namely, Breach and S-TaLiRo. Specifically, we select Global Nelder-Mead (GNM) and CMAES for Breach, and Simulated Annealing (SA) and stochastic optimization with adaptive restart (SOAR) for S-TaLiRo. Details can be found [here](https://sites.google.com/view/ai-cps-benchmark/rq2-falsification).
+`LKA/` involves the following sub-directories:
+
+- `abstraction/` stores the scripts for the abstraction process. 
+
+- `data_generation/` has one sub-directory: `generated_date/`.This folder `generated_date/` stores the simulated data from each DRL controller. And the script `LKA_data_generator.mlx` initiates the simulation with selected controllers.
+
+- `DRL_training/` stores the scripts for training new DRL agents for the AI-CPS. This folder contains three scripts, `LKA_DDPG_training.mlx`, `LKA_TD3_training.mlx`, `LKA_SAC_training.mlx`, and one sub-directory `trained_agent/`. The former scripts train DRL agents with specified algorithms, and the latter collected the pre-trained agents. 
+
+- `ensemble/`  stores the script `LKA_AC_ensemble_training.mlx` for training the "higher-level" coordinator DRL agent. And a sub-directory `trained_agent/` contains the pre-trained coordinator agents.
+
+- `evaluation/` stores the.mat files that record the evaluation results for each type of controller.
+
+- `model/` stores all the Simulink `.slx` that are used for system simulations.
+
 
 ## Installation
 
-- Clone the repository `git clone https://github.com/lyudeyun/AI-CPS-SIEGE.git`
+- Clone the repository `git clone https://github.com/sjywdxs/AI-CPS-SIEGE.git`
 - It is recommended to install the latest version of MATLAB to handle the simulink models with reinforcement learning controllers.
 
  ## How to run the script 
-- Details can be found [here](https://sites.google.com/view/ai-cps-benchmark/replication-package)
+- Details can be found [AI-CPS-SIEGE Replication-Instruction](https://sites.google.com/view/ai-cps-siege/replication-package)
